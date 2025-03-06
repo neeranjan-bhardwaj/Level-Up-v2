@@ -7,10 +7,11 @@ const port = 3000;
 
 app.use(cors());
 
-app.route('/Roadmap').get((req,res)=>{
-    console.log("hi from getRoadmap");
-    res.json(["hi from getRoadmap"] );
-});
+app.route('/Roadmap').get(getRoadmap);
+app.route('/Login')
+app.route('/signup')
+app.route('/User/progress')
+app.route('/User/roadmaps')
 
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
