@@ -65,13 +65,20 @@ export async function signup (req: Request, res: Response, next: Function):Promi
 
 export async function authorization(req: Request, res: Response, next: Function): Promise<void> {
     try{
+        //JWT check & start with Bearer
         const token = req.headers.authorization;
+        let UserName;
         if(!token) throw 'can not find token';
 
-        jwt.verify(token, 'This is my secret key for jwt', (err, decoded) => {
+        jwt.verify(token, 'This is my secret key for jwt', (err, decoded:any) => {
+            UserName = decoded.name;
             if(err) throw err;
             next();
         });
+
+        //user check root or not
+        const [[user]]:any = await User.query(`SELECT User FROM User WHERE Name=?`,[UserName]);
+        console.log(user);
     }catch(err){
         if(err instanceof Error){
             res.json({ message: err.message });

@@ -17,7 +17,7 @@ const chat = model.startChat({
 });
 
 export async function getRoadmap(req: Request, res: Response): Promise<void> {
-    let result = await chat.sendMessage("I have 2 dogs in my house.");
-    console.log(result.response.text());
+    // let result = await chat.sendMessage("I have 2 dogs in my house.");
+    // console.log(result.response.text());
     res.json({ message: "hi from getRoadmap" });
 }

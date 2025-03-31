@@ -10,7 +10,7 @@ const Page = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/Roadmap');
+        const response = await axios.get('http://localhost:3300/Roadmap');
         setData(response.data);
       } catch (e) {
         console.error(e);
@@ -28,7 +28,7 @@ const Page = () => {
   return (
     <div>
       <h1>Fetched Data</h1>
-      <pre>{data}</pre>
+      <pre>{data.message}</pre>
     </div>
   );
 };
