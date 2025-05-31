@@ -63,22 +63,28 @@ export async function signup (req: Request, res: Response, next: Function):Promi
     }
 };
 
-export async function authorization(req: Request, res: Response, next: Function): Promise<void> {
+export async function authentication(req: Request, res: Response, next: Function): Promise<void> {
     try{
-        //JWT check & start with Bearer
         const token = req.headers.authorization;
-        let UserName;
         if(!token) throw 'can not find token';
+        //JWT check & start with Bearer
+        const isVaild=token?.startsWith('Bearer ');
+        if(!isVaild) throw 'token is not vaild';
+        //remove Bearer
+        const tokenArr = token?.split(' ');
+        // console.log(tokenArr[1]);
+        let UserName;
 
-        jwt.verify(token, 'This is my secret key for jwt', (err, decoded:any) => {
+        jwt.verify(tokenArr[1], 'This is my secret key for jwt', (err, decoded:any) => {
             UserName = decoded.name;
             if(err) throw err;
+            res.locals.user= UserName;
             next();
         });
 
         //user check root or not
-        const [[user]]:any = await User.query(`SELECT User FROM User WHERE Name=?`,[UserName]);
-        console.log(user);
+        // const [[user]]:any = await User.query(`SELECT User FROM User WHERE Name=?`,[UserName]);
+        
     }catch(err){
         if(err instanceof Error){
             res.json({ message: err.message });
