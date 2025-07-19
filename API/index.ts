@@ -9,7 +9,7 @@ const port = 3300;
 app.use(express.json());
 app.use(cors());
 
-app.route('/Roadmap').get(authentication,getRoadmap);
+app.route('/Roadmap').post(getRoadmap);
 app.route('/Login').post(Login);
 app.route('/signup').post(signup);
 
