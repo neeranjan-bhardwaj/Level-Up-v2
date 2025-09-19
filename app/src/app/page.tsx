@@ -3,19 +3,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Send, User, Bot } from 'lucide-react';
 
-/**
- * AI Chatbot Component - Chat Interface Only (Next.js TypeScript)
- * 
- * A clean, professional chatbot interface with dark mode
- * Features:
- * - ChatGPT-like dark mode interface
- * - Responsive design for all screen sizes
- * - Java roadmap responses (easily customizable)
- * - Clean API integration points for future implementation
- * - Professional chat UI with typing indicators
- * - Message management
- * - Full TypeScript support
- */
 
 // Types
 interface ChatMessage {
@@ -44,86 +31,6 @@ interface ApiResponse {
   sessionId: string | number;
 }
 
-// Mock data - Java Roadmap (easily replaceable with API data)
-const JAVA_ROADMAP: JavaRoadmapData = {
-  title: "🚀 Complete Java Developer Roadmap 2024",
-  phases: [
-    {
-      phase: "Phase 1: Java Fundamentals (2-3 months)",
-      topics: [
-        "Java Syntax and Basic Concepts",
-        "Variables, Data Types, and Operators",
-        "Control Statements (if-else, loops)",
-        "Methods and Functions",
-        "Object-Oriented Programming (OOP)",
-        "Classes, Objects, Inheritance",
-        "Polymorphism and Encapsulation",
-        "Exception Handling"
-      ]
-    },
-    {
-      phase: "Phase 2: Advanced Java (2-3 months)",
-      topics: [
-        "Collections Framework (List, Set, Map)",
-        "Generics and Lambda Expressions",
-        "Stream API and Functional Programming",
-        "File I/O and Serialization",
-        "Multithreading and Concurrency",
-        "Reflection API",
-        "Annotations",
-        "Design Patterns"
-      ]
-    },
-    {
-      phase: "Phase 3: Database & Backend (2-3 months)",
-      topics: [
-        "SQL and Database Concepts",
-        "JDBC (Java Database Connectivity)",
-        "Hibernate ORM Framework",
-        "Spring Framework Basics",
-        "Spring Boot",
-        "RESTful Web Services",
-        "Spring Security",
-        "Microservices Architecture"
-      ]
-    },
-    {
-      phase: "Phase 4: Web Development (2-3 months)",
-      topics: [
-        "HTML, CSS, JavaScript Basics",
-        "Servlet and JSP",
-        "Spring MVC",
-        "Thymeleaf Template Engine",
-        "Frontend Frameworks (React/Angular)",
-        "Build Tools (Maven/Gradle)",
-        "Version Control (Git)",
-        "Testing (JUnit, Mockito)"
-      ]
-    },
-    {
-      phase: "Phase 5: Advanced Topics (2-3 months)",
-      topics: [
-        "Cloud Platforms (AWS/Azure)",
-        "Docker and Containerization",
-        "Kubernetes Basics",
-        "Message Queues (RabbitMQ/Kafka)",
-        "Caching (Redis)",
-        "Performance Optimization",
-        "System Design Concepts",
-        "DevOps and CI/CD"
-      ]
-    }
-  ],
-  tips: [
-    "💻 Practice coding daily on platforms like LeetCode and HackerRank",
-    "🛠️ Build real projects to apply your knowledge",
-    "🌟 Contribute to open-source projects on GitHub",
-    "👥 Join Java communities and forums (Stack Overflow, Reddit)",
-    "📚 Stay updated with latest Java versions and features",
-    "🎯 Focus on understanding concepts rather than memorizing syntax"
-  ]
-};
-
 const ChatBot: React.FC = () => {
   // Chat state management
   const [messages, setMessages] = useState<ChatMessage[]>([]);
@@ -150,16 +57,6 @@ const ChatBot: React.FC = () => {
     }
   }, []);
 
-  /**
-   * API Integration Points
-   * Replace these functions with actual API calls when backend is ready
-   */
-  
-  /**
-   * Send message to backend API
-   * @param message - User's message
-   * @returns API response with bot's reply
-   */
   const formatJsonString=(input: string): string=> {
     if (!input || typeof input !== 'string') {
       return input;
@@ -220,15 +117,6 @@ const ChatBot: React.FC = () => {
         response: Cleandata.Message ? Cleandata.Message : Cleandata,
         sessionId: data.sessionId
       };
-      
-
-      // // Mock API response - remove this when implementing real API
-      // await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate API delay
-      // return {
-      //   success: true,
-      //   response: JAVA_ROADMAP,
-      //   sessionId: 1
-      // };
       
     } catch (error) {
       console.error('API Error:', error);
