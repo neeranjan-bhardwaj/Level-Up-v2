@@ -91,7 +91,7 @@ const ChatBot: React.FC = () => {
     try {
       // TODO: Replace with actual API call
       
-      const response = await fetch('http://localhost:3300/Roadmap', {
+      const response = await fetch('https://leve-up-api-1.onrender.com/Roadmap', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -99,7 +99,7 @@ const ChatBot: React.FC = () => {
         },
         body: JSON.stringify({
           query: message,
-          userId: 'current-user-id', // Add user identification if needed
+          userId: 'current-user-id', 
           timestamp: new Date().toISOString()
         })
       });
