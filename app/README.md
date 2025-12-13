@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Level Up AI Frontend  
 
-## Getting Started
+Level Up AI Frontend is a web application built using **React.js** (or **Next.js**) and styled with **Tailwind CSS**. It connects to the Level Up AI API to provide students with an intuitive interface for generating personalized roadmaps for learning or achieving specific goals.  
 
-First, run the development server:
+## About the Project  
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+The frontend complements the backend API by offering a user-friendly platform where students can interact with the system. It simplifies the process of generating and visualizing roadmaps, ensuring a seamless experience for users.  
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features  
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Interactive UI**: A clean and responsive design for easy navigation.  
+- **API Integration**: Connects to the Level Up AI API for roadmap generation.  
+- **Secure Authentication**: Supports JWT-based authentication for user sessions.  
+- **Dynamic Suggestions**: Provides real-time suggestions to enhance user experience.  
+- **Customizable Themes**: Allows users to personalize the look and feel of the app.  
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## How to Use  
 
-## Learn More
+1. Clone the repository:  
+    ```bash
+    git clone <repository-url>
+    cd Level-Up-v2
+    ```  
+    This command clones the repository to your local machine and navigates into the project directory.  
 
-To learn more about Next.js, take a look at the following resources:
+2. Install dependencies:  
+    ```bash
+    npm install
+    ```  
+    or  
+    ```bash
+    yarn install
+    ```  
+    This installs all the required dependencies for the project.  
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. Set up environment variables:  
+    Create a `.env.local` file in the root directory and configure the following variables:  
+    ```plaintext
+    REACT_APP_API_URL=<your-backend-api-url>
+    REACT_APP_GOOGLE_API_KEY=<your-google-api-key>
+    ```  
+    This step ensures the application can connect to the backend API and interact with external services.  
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+4. Start the development server:  
+    ```bash
+    npm start
+    ```  
+    or  
+    ```bash
+    yarn start
+    ```  
+    This launches the development server, making the application accessible at `http://localhost:3000`.  
 
-## Deploy on Vercel
+5. Build for production:  
+    ```bash
+    npm run build
+    ```  
+    or  
+    ```bash
+    yarn build
+    ```  
+    This creates an optimized production build of the application.  
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+> **Note**: This is only the frontend application. The backend API for this project is hosted in a separate repository. Both are live and can be accessed here:  
+- [Backend Repository](#)  
+- [Live Demo](#)  
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+> **Note**: Authentication functionality is fully implemented on the backend, while the frontend authentication is currently operational but still being refined.
