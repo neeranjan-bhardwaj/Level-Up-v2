@@ -1,68 +1,135 @@
-# Level Up AI Frontend  
+# Level Up AI — Frontend
 
-Level Up AI Frontend is a web application built using **React.js** (or **Next.js**) and styled with **Tailwind CSS**. It connects to the Level Up AI API to provide students with an intuitive interface for generating personalized roadmaps for learning or achieving specific goals.  
+**Level Up AI** is an AI-powered learning platform developed as part of a hackathon project. It helps students generate personalized learning roadmaps based on their goals, making the learning process more structured and easier to follow.
 
-## About the Project  
+This repository contains the frontend application, which provides the user interface and communicates with the backend API.
 
-The frontend complements the backend API by offering a user-friendly platform where students can interact with the system. It simplifies the process of generating and visualizing roadmaps, ensuring a seamless experience for users.  
+## Hackathon Project
 
-## Features  
+- **Project:** Level Up AI
+- **Project Type:** Hackathon Project
+- **Component:** Frontend Application
 
-- **Interactive UI**: A clean and responsive design for easy navigation.  
-- **API Integration**: Connects to the Level Up AI API for roadmap generation.  
-- **Secure Authentication**: Supports JWT-based authentication for user sessions.  
-- **Dynamic Suggestions**: Provides real-time suggestions to enhance user experience.  
-- **Customizable Themes**: Allows users to personalize the look and feel of the app.  
 
-## How to Use  
+## Features
 
-1. Clone the repository:  
-    ```bash
-    git clone <repository-url>
-    cd Level-Up-v2
-    ```  
-    This command clones the repository to your local machine and navigates into the project directory.  
+- **Interactive User Interface:** A user-friendly interface for interacting with the platform.
+- **AI-Powered Learning Experience:** Display personalized learning roadmaps generated through the backend.
+- **Backend API Integration:** Communicate with the Level Up AI backend.
+- **Authentication Integration:** Support the application's JWT-based authentication flow.
+- **Dynamic Suggestions:** Present suggestions to help users with their learning goals.
+- **Customizable Themes:** Support different interface themes.
+- **Responsive Design:** Designed to work across different screen sizes.
 
-2. Install dependencies:  
-    ```bash
-    npm install
-    ```  
-    or  
-    ```bash
-    yarn install
-    ```  
-    This installs all the required dependencies for the project.  
+## Tech Stack
 
-3. Set up environment variables:  
-    Create a `.env.local` file in the root directory and configure the following variables:  
-    ```plaintext
-    REACT_APP_API_URL=<your-backend-api-url>
-    REACT_APP_GOOGLE_API_KEY=<your-google-api-key>
-    ```  
-    This step ensures the application can connect to the backend API and interact with external services.  
+| Technology | Purpose |
+|---|---|
+| React.js | Frontend framework |
+| JavaScript | Application development |
+| Tailwind CSS | Styling |
+| REST API | Backend communication |
+| JWT | Authentication integration |
 
-4. Start the development server:  
-    ```bash
-    npm start
-    ```  
-    or  
-    ```bash
-    yarn start
-    ```  
-    This launches the development server, making the application accessible at `http://localhost:3000`.  
+## Project Structure
 
-5. Build for production:  
-    ```bash
-    npm run build
-    ```  
-    or  
-    ```bash
-    yarn build
-    ```  
-    This creates an optimized production build of the application.  
+```text
+Level-Up-v2/
+├── public/
+├── src/
+│   ├── components/
+│   ├── pages/
+│   └── ...
+├── package.json
+└── README.md
+```
 
-> **Note**: This is only the frontend application. The backend API for this project is hosted in a separate repository. Both are live and can be accessed here:  
-- [Backend Repository](#)  
-- [Live Demo](#)  
+*The structure above is illustrative. Update it to match the actual repository.*
 
-> **Note**: Authentication functionality is fully implemented on the backend, while the frontend authentication is currently operational but still being refined.
+## Getting Started
+
+### 1. Clone the Repository
+
+```bash
+git clone <repository-url>
+cd Level-Up-v2
+```
+
+### 2. Install Dependencies
+
+Using npm:
+
+```bash
+npm install
+```
+
+Or using Yarn:
+
+```bash
+yarn install
+```
+
+### 3. Configure Environment Variables
+
+Create a `.env.local` file in the frontend root directory:
+
+```env
+REACT_APP_API_URL=<your-backend-api-url>
+```
+
+Make sure the variable name matches the frontend build tool and the API configuration used in your source code.
+
+**Security:** Do not expose private API keys in frontend environment variables. Keep sensitive credentials on the backend.
+
+### 4. Start the Development Server
+
+Using npm:
+
+```bash
+npm start
+```
+
+Or using Yarn:
+
+```bash
+yarn start
+```
+
+The development server will display the local URL in the terminal.
+
+### 5. Build for Production
+
+Using npm:
+
+```bash
+npm run build
+```
+
+Or using Yarn:
+
+```bash
+yarn build
+```
+
+## Backend Integration
+
+The frontend communicates with the separate Level Up AI backend API for authentication, data operations, and AI-powered learning functionality.
+
+**Backend Repository:** [Add backend repository link here]
+
+## What I Worked On
+
+Through this project, I explored and worked with:
+
+- Building a frontend application using React.js.
+- Developing UI components and styling with Tailwind CSS.
+- Integrating a frontend application with a backend REST API.
+- Connecting frontend authentication flows with JWT-based backend authentication.
+- Displaying dynamic data and AI-generated learning roadmaps.
+- Building a user interface for a practical AI-powered application.
+
+## Project Purpose
+
+The goal of Level Up AI was to help students move beyond random learning by providing a more structured approach to achieving their educational and career goals.
+
+The hackathon gave me an opportunity to work on a complete application, connecting frontend development with backend services and AI-powered functionality.
